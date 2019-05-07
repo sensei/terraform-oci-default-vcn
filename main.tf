@@ -29,9 +29,9 @@ resource "oci_core_default_route_table" "this" {
     network_entity_id = "${oci_core_internet_gateway.this.id}"
   }
   
-  lifecycle{
-     ignore_changes: ["route_rules"]
-   }
+  lifecycle {
+    ignore_changes = ["route_rules"]
+  }
 }
 
 ######################
