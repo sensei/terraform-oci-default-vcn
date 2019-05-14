@@ -52,5 +52,5 @@ resource "oci_core_subnet" "this" {
   dns_label                  = "${var.subnet_dns_label}${count.index + 1}"
   compartment_id             = "${var.compartment_ocid}"
   vcn_id                     = "${oci_core_vcn.this.id}"
-  security_list_ids          = ["${concat(oci_core_vcn.this.default_security_list_id)}, var.security_list_ids"]
+  security_list_ids          = ["${concat(oci_core_vcn.this.default_security_list_id, var.security_list_ids)}"]
 }
