@@ -22,3 +22,8 @@ variable "subnet_dns_label" {
   description = "A DNS label prefix for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet. "
   default     = "subnet"
 }
+
+variable "security_list_ids" {
+  description = "An optional list of additional security lists to add to the VCN. "
+  default     = []
+}
