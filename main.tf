@@ -53,4 +53,8 @@ resource "oci_core_subnet" "this" {
   compartment_id             = "${var.compartment_ocid}"
   vcn_id                     = "${oci_core_vcn.this.id}"
   security_list_ids          = ["${compact(concat(list(oci_core_vcn.this.default_security_list_id), var.security_list_ids))}"]
-}
+  
+  lifecycle {
+    ignore_changes = ["security_list_ids"]
+  }
+ }
